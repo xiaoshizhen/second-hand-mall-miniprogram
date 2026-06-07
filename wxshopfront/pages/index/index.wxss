@@ -1,0 +1,123 @@
+/**index.wxss**/
+.nx_swiper swiper{
+  width:750rpx;
+  height:400rpx;
+}
+.nx_swiper swiper image{
+  width:750rpx;
+  height:400rpx;
+  border-radius: 24rpx;
+}
+
+/* 宫格 */
+.nx_congar{
+  margin: 20rpx;
+}
+
+.input {
+  padding: 20rpx;
+  color: var(--textSubColor);
+  font-weight: bold;
+  font-size: 22rpx;
+  background-color: #ffffff;
+  border-bottom: 1rpx solid var(--borderColor);
+  border-radius: 24rpx 24rpx 0 0;
+}
+
+.nx_congar_title{
+  padding: 20rpx;
+  color: var(--textColor);
+  font-weight: bold;
+  font-size: 35rpx;
+  background: linear-gradient(135deg, #E3F2FD, #FFFFFF);
+  border-bottom:1px solid var(--borderColor) ;
+  border-radius:24rpx 24rpx 0 0;
+}
+
+.nx_congar_list{
+  padding: 20rpx 20rpx 0 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #ffffff;
+  border-radius: 0 0 24rpx 24rpx;
+  box-shadow: 0 8rpx 24rpx rgba(15, 23, 42, 0.05);
+}
+
+.nx_congar_list navigator{
+  margin-bottom: 20rpx;
+  text-align: center;
+  color: var(--textSubColor);
+}
+
+/* 3宫格 */
+.nx_congar_item_3{
+  width: 33.33%;
+}
+.nx_congar_item_3 image{
+  width: 90%;
+  height: 180rpx;
+  border-radius: 12rpx;
+}
+
+.nx_item_name {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  font-weight: bold;
+  font-size: 35rpx;
+  color: var(--textColor);
+}
+
+/* 列表 */
+.nx_line{
+  margin: 20rpx;
+}
+.nx_line_title{
+  padding: 20rpx;
+  color: var(--textColor);
+  font-weight: bold;
+  font-size: 35rpx;
+  background: linear-gradient(135deg, #E3F2FD, #FFFFFF);
+  border-bottom:1px solid var(--borderColor) ;
+  border-radius:24rpx 24rpx 0 0;
+}
+
+.nx_line_list{
+  background-color: #ffffff;
+  border-radius: 0 0 24rpx 24rpx;
+  box-shadow: 0 8rpx 24rpx rgba(15, 23, 42, 0.05);
+}
+
+.nx_line_list .nx_line_item{
+  width: 100%;
+  display: flex;
+  padding: 20rpx;
+  border-bottom: 1px solid var(--borderColor);
+}
+
+.nx_line_left{
+  flex: 2;
+  display: flex;
+  align-items: center;
+}
+.nx_line_mid{
+  flex: 8;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--textSubColor);
+  padding: 0 20rpx;
+}
+.nx_line_right{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--textSubColor);
+}
+.nx_line_left image{
+  width: 100%;
+  height: 100rpx;
+  border-radius: 12rpx;
+}

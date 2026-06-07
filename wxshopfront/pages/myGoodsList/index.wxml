@@ -1,0 +1,37 @@
+<!--pages/myGoodsList/index.wxml-->
+<view class="nx_line">
+  <view class="nx_line_list">
+    <block wx:if="{{goodsList.length == 0}}">
+      <view class="empty-state">
+        <image class="empty-state__img" mode="widthFix" src="../../imgs/cartNone.gif"></image>
+        <text class="empty-state__text">暂无商品</text>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="nx_line_item" wx:for="{{goodsList}}" wx:key="id" wx:for-item="item">
+        <view class="goods-row">
+          <view class="goods-image">
+            <image mode="scaleToFill" src="{{item.url}}"></image>
+          </view>
+          <view class="goods-info">
+            <view class="goods-name">{{item.name}}</view>
+            <view class="goods-meta">
+              <text class="price">¥{{item.price}}</text>
+              <text class="sales">销量：{{item.sales || 0}}</text>
+              <text class="stock">库存：{{item.count || 0}}</text>
+            </view>
+          </view>
+          <view class="goods-actions">
+            <text class="btn edit-btn" bindtap="editGoods" data-id="{{item.id}}">修改</text>
+            <text class="btn delete-btn" bindtap="deleteGoods" data-id="{{item.id}}">删除</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <view class="add-btn-wrap">
+    <button class="add-btn" type="primary" bindtap="addGoods">添加商品</button>
+  </view>
+</view>
+

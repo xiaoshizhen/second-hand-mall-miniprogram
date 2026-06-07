@@ -1,0 +1,126 @@
+/* pages/goodsInfo/index.wxss */
+page {
+  padding-bottom: 100rpx;
+}
+
+.nx_swiper swiper {
+  width: 750rpx;
+  height: 400rpx;
+}
+
+.nx_swiper swiper image {
+  width: 750rpx;
+  height: 400rpx;
+  border-radius: 24rpx;
+}
+
+.nx_detail_main {
+  padding: 20rpx;
+}
+
+.nx_detail_main_item {
+  background-color: #ffffff;
+  padding: 20rpx;
+  border-bottom: 1rpx solid var(--borderColor);
+  display: flex;
+  border-radius: 24rpx;
+  box-shadow: 0 8rpx 24rpx rgba(15, 23, 42, 0.06);
+  margin-bottom: 20rpx;
+}
+
+.nx_detail_main_item_left {
+  flex: 2
+}
+
+.nx_detail_main_item_right {
+  flex: 8
+}
+
+.footer_tool {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 90rpx;
+  background-color: #ffffff;
+  display: flex;
+  border-top: 1rpx solid var(--borderColor);
+  box-shadow: 0 -8rpx 24rpx rgba(15, 23, 42, 0.06);
+}
+
+.footer_tool .order_pay_wrap {
+  flex: 3;
+  background: linear-gradient(135deg, #1A73E8, #2563EB);
+  color: #ffffff;
+  font-size: 32rpx;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 999rpx;
+  margin: 10rpx 20rpx;
+}
+
+/* 评价列表样式 */
+.comment-section {
+  margin-top: 20rpx;
+  background-color: #ffffff;
+  border-radius: 24rpx;
+  box-shadow: 0 8rpx 24rpx rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+}
+
+.comment-title {
+  padding: 20rpx;
+  font-size: 35rpx;
+  font-weight: bold;
+  color: #333;
+  border-bottom: 1rpx solid var(--borderColor);
+}
+
+.comment-item {
+  padding: 20rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.comment-item:last-child {
+  border-bottom: none;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15rpx;
+}
+
+.comment-user {
+  flex: 1;
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 500;
+}
+
+.comment-time {
+  flex: 1;
+  font-size: 24rpx;
+  color: #999;
+  text-align: right;
+}
+
+.comment-content {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.6;
+  word-break: break-all;
+}
+
+.comment-empty {
+  padding: 60rpx 20rpx;
+  text-align: center;
+}
+
+.comment-empty-text {
+  font-size: 28rpx;
+  color: #999;
+}

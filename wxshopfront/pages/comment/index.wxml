@@ -1,0 +1,8 @@
+<!--pages/comment/index.wxml-->
+<view class="login_title">{{mode === 'edit' ? '修改评价' : '商品评价'}}</view>
+<view class="input_view">
+  <textarea class="input_text" value="{{content}}" placeholder="请输入评价内容" bindinput="onComment" maxlength="500" auto-height></textarea>
+</view>
+<view class="loginBtnView">
+  <button class="loginBtn" type="primary" bindtap="comment">{{mode === 'edit' ? '保存修改' : '提交'}}</button>
+</view>

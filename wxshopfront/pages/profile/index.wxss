@@ -1,0 +1,51 @@
+.profile_page {
+  padding: 30rpx;
+}
+
+.profile_card {
+  padding: 30rpx 24rpx 10rpx;
+}
+
+.profile_title {
+  font-size: 34rpx;
+  font-weight: 600;
+  margin-bottom: 20rpx;
+  color: var(--textColor);
+}
+
+.form_item {
+  margin-bottom: 24rpx;
+}
+
+.form_item .label {
+  font-size: 26rpx;
+  color: var(--textSubColor);
+  margin-bottom: 10rpx;
+}
+
+.form_item .input {
+  padding: 18rpx 20rpx;
+  border-radius: 16rpx;
+  background-color: #F9FAFB;
+  border: 1rpx solid var(--borderColor);
+  font-size: 26rpx;
+}
+
+.sex_group {
+  display: flex;
+  gap: 40rpx;
+}
+
+.sex_option {
+  display: flex;
+  align-items: center;
+  font-size: 26rpx;
+  color: var(--textSubColor);
+}
+
+.btn_area {
+  margin-top: 40rpx;
+  display: flex;
+  justify-content: center;
+}
+

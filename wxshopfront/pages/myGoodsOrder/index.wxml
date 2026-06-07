@@ -1,0 +1,35 @@
+<view class="nx_line">
+  <view class="nx_line_list">
+    <block wx:if="{{dataList.length==0}}">
+      <view class="empty-state">
+        <image class="empty-state__img" mode="widthFix" src="../../imgs/cartNone.gif"></image>
+        <text class="empty-state__text">暂无商品</text>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="nx_line_item" wx:for="{{dataList}}" wx:for-item="item" wx:key="id">
+        <navigator style="display: flex;" url="/pages/orderDetail/index?id={{item.id}}&&state={{item.state}}">
+          <view class="nx_line_left">
+            <image mode="scaleToFill" src="{{item.url}}"></image>
+          </view>
+          <view class="nx_line_mid">
+            <view style="color: black;padding: 15rpx 0;">订单编号: {{item.orderid}}</view>
+            <view style="padding-top:10rpx;">买家：{{item.userInfo && item.userInfo.nickname ? item.userInfo.nickname : (item.userInfo && item.userInfo.name ? item.userInfo.name : item.userid)}}</view>
+            <view style="padding-top:10rpx;">订单状态: {{item.state}}</view>
+          </view>
+          <view class="nx_line_right">
+            <text style="color: red;">¥{{item.totalprice}}</text>
+            <text style="padding-top: 10rpx;">共{{item.count}}件</text>
+          </view>
+        </navigator>
+
+        <view style="text-align: right;padding: 20rpx;">
+          <text wx:if="{{item.state === '待发货'}}" style="background-color: var(--themeColor);color: white;" class="btn" bindtap="changeState" data-id="{{item.id}}" data-state="待收货">发货</text>
+          <text wx:if="{{item.state === '申请退货中'}}" style="background-color: var(--themeColor);color: white;" class="btn" bindtap="changeState" data-id="{{item.id}}" data-state="已退货">退货</text>
+          <text class="btn" bindtap="deleteOrder" data-id="{{item.id}}">删除订单</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+

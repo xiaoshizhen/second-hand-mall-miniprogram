@@ -1,0 +1,77 @@
+/**app.wxss**/
+page,view,text,swiper,siper-item,image,navigator{
+  padding: 0;
+  margin:0;
+  box-sizing: border-box;
+}
+
+/* 主题颜色与全局风格：蓝白清爽 */
+page{
+  /* 主色：品牌蓝 */
+  --themeColor: #1A73E8;
+  /* 辅色：浅蓝，用于背景高亮 */
+  --themeColorLight: #E3F2FD;
+  /* 文字主色与次级文字色 */
+  --textColor: #1F2933;
+  --textSubColor: #6B7280;
+  /* 卡片与边框颜色 */
+  --cardBg: #FFFFFF;
+  --borderColor: #E5E7EB;
+  /* 危险/价格色 */
+  --dangerColor: #EF4444;
+
+  background: #F3F6FB;
+  color: var(--textColor);
+  font-size: 28rpx;
+}
+
+/* 全局卡片通用样式（可按需复用） */
+.card {
+  background-color: var(--cardBg);
+  border-radius: 16rpx;
+  box-shadow: 0 8rpx 24rpx rgba(15, 23, 42, 0.05);
+  border: 1rpx solid rgba(148, 163, 184, 0.3);
+}
+
+/* 全局主按钮样式（可按需复用） */
+.btn-primary {
+  background: linear-gradient(135deg, #1A73E8, #2563EB);
+  color: #ffffff;
+  border-radius: 999rpx;
+  padding: 20rpx 40rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary:active {
+  opacity: 0.9;
+}
+
+image{
+  width: 100%;
+  border-radius: 12rpx;
+}
+
+/* 空态（默认gif + 文案） */
+.empty-state {
+  width: 100%;
+  padding: 120rpx 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20rpx;
+}
+
+.empty-state__img {
+  width: 130rpx;
+  border-radius: 0;
+}
+
+.empty-state__text {
+  color: var(--textSubColor);
+  font-size: 28rpx;
+}

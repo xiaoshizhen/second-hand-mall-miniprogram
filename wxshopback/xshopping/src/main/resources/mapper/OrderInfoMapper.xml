@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.javaclimb.mapper.OrderInfoMapper">
+    <delete id="deldeteById">
+        delete from order_info where id = #{id}
+    </delete>
+
+    <!-- 根据终端用户id和状态查询订单列表（买家视角） -->
+    <select id="findByEndUserId" resultType="com.javaclimb.entity.OrderInfo">
+        select * from order_info where userId = #{userId}
+        <if test="state != null and state != ''">
+            <choose>
+                <when test='"refund".equals(state)'>
+                    and state in ('申请退货中', '已退货')
+                </when>
+                <otherwise>
+                    and state = #{state}
+                </otherwise>
+            </choose>
+        </if>
+        order by id desc
+    </select>
+
+    <!-- 根据卖家id和状态查询订单列表（卖家视角，查询其发布商品相关订单） -->
+    <select id="findBySellerId" resultType="com.javaclimb.entity.OrderInfo">
+        select distinct o.*
+        from order_info o
+                 left join order_goods_rel ogr on ogr.orderId = o.id
+                 left join goods_info g on g.id = ogr.goodsId
+        where g.userId = #{sellerId}
+        <if test="state != null and state != ''">
+            and o.state = #{state}
+        </if>
+        order by o.id desc
+    </select>
+</mapper>

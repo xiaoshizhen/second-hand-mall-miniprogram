@@ -1,0 +1,80 @@
+/* pages/myGoods/index.wxss */
+.mygoods-container {
+  padding: 20rpx;
+  background-color: #f7f7f7;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.mygoods-header {
+  font-size: 32rpx;
+  font-weight: 600;
+  margin-bottom: 20rpx;
+}
+
+.mygoods-form {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  padding: 20rpx 24rpx;
+  box-shadow: 0 6rpx 20rpx rgba(0, 0, 0, 0.05);
+}
+
+.form-item {
+  margin-bottom: 24rpx;
+}
+
+.label {
+  display: block;
+  font-size: 28rpx;
+  color: #333333;
+  margin-bottom: 10rpx;
+}
+
+.input,
+.textarea,
+.picker {
+  width: 100%;
+  padding: 22rpx 26rpx;
+  border-radius: 12rpx;
+  border: 1px solid #e0e0e0;
+  font-size: 30rpx;
+  box-sizing: border-box;
+  background-color: #fafafa;
+}
+
+.input {
+  min-height: 88rpx;
+  line-height: 44rpx;
+}
+
+.textarea {
+  min-height: 260rpx;
+}
+
+.picker {
+  line-height: 40rpx;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.radio-label {
+  margin-right: 40rpx;
+  font-size: 28rpx;
+  color: #333333;
+}
+
+.mygoods-footer {
+  margin-top: 40rpx;
+}
+
+.submit-btn {
+  width: 100%;
+  border-radius: 999rpx;
+  background: #007aff;
+  color: #ffffff;
+}
+

@@ -1,0 +1,65 @@
+/**category.wxss**/
+.nx_swiper swiper{
+  width:750rpx;
+  height:400rpx;
+}
+.nx_swiper swiper image{
+  width:750rpx;
+  height:400rpx;
+  border-radius: 24rpx;
+}
+
+.cates{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.cates .cates_container{
+  display: flex;
+  margin-top: 20rpx;
+  flex: 1;
+  overflow: hidden;
+}
+
+.cates .cates_container .left_menu{
+  flex: 2;
+  height: 100%;
+}
+
+.cates .cates_container .left_menu .menu_item{
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  color: var(--textSubColor);
+}
+
+.cates .cates_container .left_menu .active {
+  color: var(--themeColor);
+  border-left: 5rpx solid currentColor;
+  background-color: #E3F2FD;
+}
+
+.cates .cates_container .right_content{
+  flex: 5;
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 24rpx 0 0 24rpx;
+  box-shadow: 0 8rpx 24rpx rgba(15, 23, 42, 0.06);
+}
+
+.goods_list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.goods_list navigator {
+  text-align: center;
+  padding: 15rpx;
+}
+
+.goods_list navigator image {
+  border-radius: 12rpx;
+}

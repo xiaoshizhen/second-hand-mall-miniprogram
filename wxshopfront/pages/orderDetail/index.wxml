@@ -1,0 +1,32 @@
+<!--pages/orderDetail/index.wxml-->
+<view class="container">
+  <view class="order-detail-list">
+    <block wx:if="{{list.length === 0}}">
+      <view class="empty-state">
+        <image class="empty-state__img" mode="widthFix" src="../../imgs/cartNone.gif"></image>
+        <text class="empty-state__text">暂无商品</text>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="order-item" wx:for="{{list}}" wx:key="id" wx:for-item="item">
+        <navigator class="goods-link" url="/pages/goodsInfo/index?id={{item.id}}">
+          <view class="goods-info">
+            <image class="goods-img" src="{{item.url}}" mode="aspectFill"></image>
+            <view class="goods-detail">
+              <view class="goods-name">{{item.name}}</view>
+              <view class="goods-meta">
+                <view class="goods-price">¥{{item.price}}</view>
+                <view class="goods-count">共{{item.count}}件</view>
+              </view>
+            </view>
+          </view>
+        </navigator>
+        <view class="order-actions" wx:if="{{state==='完成'}}">
+          <view class="action-btn comment-btn" data-id="{{item.id}}" bindtap="comment">
+            评价
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

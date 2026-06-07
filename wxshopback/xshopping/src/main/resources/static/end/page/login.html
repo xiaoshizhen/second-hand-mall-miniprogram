@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理登录</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.css" rel="stylesheet">
+
+    <style>
+        /* 页面背景 */
+        html, body {
+            height: 100%;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: url("/end/img/login.jpg") no-repeat center center / cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Microsoft YaHei", sans-serif;
+            overflow: hidden;
+        }
+
+        /* 背景光点（非常弱，避免干扰）*/
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+            filter: blur(6px);
+            animation: float 7s infinite ease-in-out;
+            pointer-events: none;
+        }
+        @keyframes float {
+            0% { transform: translateY(0) scale(1); opacity: 0.25; }
+            50% { transform: translateY(-20px) scale(1.06); opacity: 0.45; }
+            100% { transform: translateY(0) scale(1); opacity: 0.25; }
+        }
+
+        /* 登录卡片：更高不透明度，降低背景干扰 */
+        .login-container {
+            width: 420px;
+            max-width: 92%;
+            padding: 36px 40px;
+            border-radius: 16px;
+            /* 半透明 + 更浅模糊，提升可读性 */
+            background: rgba(255,255,255,0.94);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border: 1px solid rgba(0,0,0,0.06);
+            box-shadow: 0 10px 30px rgba(15, 23, 35, 0.18);
+            color: #1f2b35;
+            animation: fadeIn 0.9s ease-out;
+            position: relative;
+            z-index: 2;
+        }
+
+        .login-container h2 {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 700;
+            margin: 6px 0 4px;
+            color: #0f1720;
+        }
+
+        .login-container h4 {
+            text-align: center;
+            margin-bottom: 18px;
+            color: #4a5963;
+            font-weight: 400;
+            font-size: 14px;
+        }
+
+        /* 输入行容器：图标区域与输入区 */
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            border-radius: 28px;
+            border: 1px solid rgba(16, 24, 32, 0.08);
+            box-shadow: 0 4px 10px rgba(16,24,32,0.04);
+            overflow: hidden;
+            height: 48px;
+        }
+
+        .input-group-addon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 54px;
+            height: 100%;
+            background: transparent;
+            border: none;
+            color: #2d3b44;
+            font-size: 16px;
+        }
+
+        input.form-control {
+            border: none;
+            height: 100%;
+            background: transparent;
+            outline: none;
+            box-shadow: none;
+            padding: 0 18px;
+            font-size: 15px;
+            color: #0f1720;
+        }
+
+        input.form-control::placeholder {
+            color: #96a3ad;
+        }
+
+        input.form-control:focus {
+            background: transparent;
+        }
+
+        /* 忘记密码（靠右、小字） */
+        .forget {
+            text-align: right;
+            color: #4c98ff;
+            font-size: 13px;
+            margin-top: 6px;
+            cursor: pointer;
+        }
+        .forget:hover { text-decoration: underline; }
+
+        /* 登录按钮：高对比，圆润 */
+        .btn-login {
+            width: 100%;
+            margin-top: 18px;
+            border-radius: 28px;
+            height: 48px;
+            font-size: 16px;
+            background: linear-gradient(90deg, #00b4ff 0%, #0066ff 100%);
+            border: none;
+            color: #ffffff;
+            font-weight: 600;
+            box-shadow: 0 6px 18px rgba(0, 100, 255, 0.18);
+            cursor: pointer;
+            transition: transform .18s ease, box-shadow .18s ease;
+        }
+        .btn-login:active { transform: translateY(1px); }
+        .btn-login:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0, 100, 255, 0.22);
+        }
+
+        /* 轻微入口动画 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 响应式 */
+        @media (max-width: 480px) {
+            .login-container { padding: 28px 20px; width: 92%; }
+            .input-group { height: 44px; }
+            .input-group-addon { width: 48px; }
+            .btn-login { height: 44px; }
+        }
+
+        [v-cloak] { display: none; }
+    </style>
+</head>
+<body>
+
+<!-- 非侵入式背景光点（位置随意，可删除） -->
+<div class="bubble" style="width:120px;height:120px;left:8%;top:72%;animation-delay:0s;"></div>
+<div class="bubble" style="width:90px;height:90px;left:78%;top:18%;animation-delay:1.6s;"></div>
+
+<div id="app" class="login-container" v-cloak>
+    <h2>拾光集市 </h2>
+    <h4>后台管理系统</h4>
+
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+            <input type="text" class="form-control" v-model="user.name" placeholder="请输入用户名">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+            <input type="password" class="form-control" v-model="user.password" placeholder="请输入密码">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <span class="forget" @click="reset">忘记密码？</span>
+    </div>
+
+    <button class="btn btn-login" @click="login">登录</button>
+</div>
+
+<script src="../js/vue2.6.11/vue.min.js"></script>
+<script src="../js/vue2.6.11/axios.js"></script>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            user:{
+                name:"",
+                password:""
+            }
+        },
+        methods:{
+            login() {
+                axios.post('/login',this.user).then(res =>{
+                    if (res.data.code ==='0'){
+                        localStorage.setItem('user',JSON.stringify(res.data.data));
+                        location.href='/end/page/index.html';
+                    }else {
+                        alert(res.data.msg);
+                    }
+                }).catch(err=>{
+                    alert('网络或服务器错误，请稍后再试');
+                });
+            },
+            reset() {
+                if(!this.user.name){
+                    alert("请输入用户名");
+                    return;
+                }
+                axios.post('/resetPassword',this.user).then(res => {
+                    if(res.data.code === '0') {
+                        alert("重置密码成功，密码已重置为：123456");
+                    } else {
+                        alert(res.data.msg);
+                    }
+                }).catch(err=>{
+                    alert('网络或服务器错误，请稍后再试');
+                });
+            }
+        }
+    });
+</script>
+</body>
+</html>

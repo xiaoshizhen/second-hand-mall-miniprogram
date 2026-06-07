@@ -1,0 +1,17 @@
+/* pages/login/index.wxss */
+.login_title {
+  font-size: 40rpx;
+  color: var(--themeColor);
+  text-align: center;
+  margin: 60rpx;
+  font-weight: 700;
+  letter-spacing: 2rpx;
+}
+
+.login_subtitle {
+  font-size: 26rpx;
+  color: var(--textSubColor);
+  text-align: center;
+  margin-top: -30rpx;
+  margin-bottom: 40rpx;
+}

@@ -1,0 +1,60 @@
+<!--pages/myGoods/index.wxml-->
+<view class="mygoods-container">
+  <view class="mygoods-header">
+    <text>发布商品</text>
+  </view>
+
+  <view class="mygoods-form">
+    <view class="form-item">
+      <text class="label">商品名称</text>
+      <input class="input" placeholder="请输入商品名称" bindinput="onNameInput" value="{{name}}" />
+    </view>
+
+    <view class="form-item">
+      <text class="label">商品描述</text>
+      <textarea class="textarea" placeholder="请输入商品描述" bindinput="onDescInput" value="{{description}}" />
+    </view>
+
+    <view class="form-item">
+      <text class="label">所属类别</text>
+      <picker mode="selector" range="{{typeList}}" range-key="name" value="{{typeIndex}}" bindchange="onTypeChange">
+        <view class="picker">
+          <text wx:if="{{typeList.length > 0}}">{{typeList[typeIndex].name}}</text>
+          <text wx:else>请选择类别</text>
+        </view>
+      </picker>
+    </view>
+
+    <view class="form-item">
+      <text class="label">价格</text>
+      <input class="input" type="digit" placeholder="请输入价格" bindinput="onPriceInput" value="{{price}}" />
+    </view>
+
+    <view class="form-item">
+      <text class="label">折扣（0-1，小数，选填）</text>
+      <input class="input" type="digit" placeholder="例如：0.9" bindinput="onDiscountInput" value="{{discount}}" />
+    </view>
+
+    <view class="form-item">
+      <text class="label">库存数量</text>
+      <input class="input" type="number" placeholder="请输入库存数量" bindinput="onCountInput" value="{{count}}" />
+    </view>
+
+    <view class="form-item">
+      <text class="label">是否推荐</text>
+      <view class="radio-group">
+        <label class="radio-label">
+          <radio value="是" checked="{{recommend === '是'}}" bindtap="onRecommendYes" /> 是
+        </label>
+        <label class="radio-label">
+          <radio value="否" checked="{{recommend === '否'}}" bindtap="onRecommendNo" /> 否
+        </label>
+      </view>
+    </view>
+  </view>
+
+  <view class="mygoods-footer">
+    <button class="submit-btn" type="primary" bindtap="submitGoods">提交发布</button>
+  </view>
+</view>
+

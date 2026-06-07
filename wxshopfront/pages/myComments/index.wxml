@@ -1,0 +1,36 @@
+<!--pages/myComments/index.wxml-->
+<view class="container">
+  <view class="comment-list">
+    <block wx:if="{{commentList.length == 0}}">
+      <view class="empty-state">
+        <image class="empty-state__img" mode="widthFix" src="../../imgs/cartNone.gif"></image>
+        <text class="empty-state__text">暂无评价</text>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="comment-item" wx:for="{{commentList}}" wx:key="id">
+        <view class="comment-header">
+          <view class="goods-info">
+            <image class="goods-img" src="{{item.goodsImg}}" mode="aspectFill"></image>
+            <view class="goods-detail">
+              <view class="goods-name">{{item.goodsName}}</view>
+              <view class="goods-price">¥{{item.goodsPrice}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="comment-content">
+          <view class="comment-text">{{item.content}}</view>
+          <view class="comment-time">{{item.createtime}}</view>
+        </view>
+        <view class="comment-actions">
+          <view class="action-btn edit-btn" bindtap="editComment" data-comment="{{item}}">
+            修改
+          </view>
+          <view class="action-btn delete-btn" bindtap="deleteComment" data-id="{{item.id}}">
+            删除
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

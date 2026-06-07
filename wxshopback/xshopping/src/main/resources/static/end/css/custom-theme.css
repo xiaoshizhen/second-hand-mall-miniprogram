@@ -1,0 +1,515 @@
+/* =============================================
+   蓝白简洁主题 v2.0 - 全面升级
+   作者：Qwen（阿里云）
+   说明：专为后台管理系统设计，适用于 Element UI 或纯 HTML/CSS
+============================================= */
+
+/* ================== 全局基础 ================== */
+* {
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa !important;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* ================== 顶部导航栏 ================== */
+.el-header {
+    background-color: #409eff !important;
+    color: white !important;
+    padding: 0 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+.el-header .title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-left: 20px;
+    line-height: 60px;
+}
+.el-header .user-info {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    color: white;
+    font-size: 14px;
+}
+.el-header .user-info span {
+    margin-right: 10px;
+}
+.el-header .avatar {
+    width: 32px;
+    height: 32px;/* =============================================
+   🔥 终极蓝白简洁主题 - 强制最高优先级
+   作者：Qwen（阿里云）
+   特点：全属性加 !important + 高特异性选择器 + 全局重置
+   用途：直接覆盖任何旧后台系统的丑陋样式
+============================================= */
+
+    /* ========== 全局重置 ========== */
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed,
+    figure, figcaption, footer, header, hgroup,
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+        box-sizing: border-box !important;
+    }
+
+    body {
+        background-color: #f8f9fa !important;
+        color: #333333 !important;
+        font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif !important;
+        line-height: 1.6 !important;
+        min-height: 100vh !important;
+    }
+
+    /* ========== 顶部栏 ========== */
+    .el-header,
+    header,
+    .navbar,
+    .top-bar,
+    #header,
+    .header {
+        background-color: #409EFF !important;
+        color: white !important;
+        height: 60px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 0 24px !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+        z-index: 1000 !important;
+    }
+    .el-header .title,
+    header .title,
+    .navbar .brand {
+        font-size: 18px !important;
+        font-weight: 600 !important;
+        color: white !important;
+    }
+
+    /* ========== 左侧菜单 ========== */
+    .el-aside,
+    aside,
+    .sidebar,
+    #sidebar,
+    .left-menu {
+        background-color: #ffffff !important;
+        width: 220px !important;
+        border-right: 1px solid #ebeef5 !important;
+        box-shadow: 2px 0 8px rgba(0,0,0,0.05) !important;
+        height: calc(100vh - 60px) !important;
+        position: fixed !important;
+        top: 60px !important;
+        left: 0 !important;
+        overflow-y: auto !important;
+    }
+    .el-menu,
+    .menu,
+    .sidebar ul {
+        background: transparent !important;
+        border: none !important;
+    }
+    .el-menu-item,
+    .menu li a,
+    .sidebar li a {
+        padding: 12px 20px !important;
+        font-size: 14px !important;
+        color: #606266 !important;
+        text-decoration: none !important;
+        display: block !important;
+        border-radius: 4px !important;
+        margin: 4px 8px !important;
+        transition: all 0.2s !important;
+    }
+    .el-menu-item:hover,
+    .menu li a:hover,
+    .sidebar li a:hover {
+        background-color: #f0f9ff !important;
+        color: #409EFF !important;
+    }
+    .el-menu-item.is-active,
+    .menu li a.active,
+    .sidebar li a.active {
+        background-color: #409EFF !important;
+        color: white !important;
+    }
+    .el-menu-item i,
+    .menu li a i,
+    .sidebar li a i {
+        margin-right: 8px !important;
+        font-size: 16px !important;
+    }
+
+    /* ========== 主内容区 ========== */
+    .el-main,
+    main,
+    .content,
+    #content,
+    .right-content {
+        margin-left: 220px !important;
+        padding: 24px !important;
+        min-height: calc(100vh - 60px) !important;
+    }
+    .card,
+    .el-card,
+    .panel,
+    .box {
+        background: white !important;
+        border: 1px solid #ebeef5 !important;
+        border-radius: 8px !important;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.05) !important;
+        margin-bottom: 24px !important;
+        overflow: hidden !important;
+    }
+    .card-header,
+    .el-card__header,
+    .panel-heading {
+        padding: 16px 20px !important;
+        background: #f5f7fa !important;
+        border-bottom: 1px solid #ebeef5 !important;
+        font-weight: 600 !important;
+        font-size: 16px !important;
+        color: #303133 !important;
+    }
+    .card-body,
+    .el-card__body,
+    .panel-body {
+        padding: 20px !important;
+    }
+
+    /* ========== 表格 ========== */
+    table,
+    .el-table,
+    .data-table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        margin-top: 16px !important;
+    }
+    th,
+    td,
+    .el-table th,
+    .el-table td {
+        padding: 12px 16px !important;
+        text-align: left !important;
+        border-bottom: 1px solid #ebeef5 !important;
+    }
+    th {
+        background-color: #f5f7fa !important;
+        color: #5a5e66 !important;
+        font-weight: 600 !important;
+        font-size: 14px !important;
+    }
+    tr:hover {
+        background-color: #f0f9ff !important;
+    }
+    tbody tr {
+        background: white !important;
+    }
+
+    /* ========== 按钮 ========== */
+    button,
+    input[type="button"],
+    input[type="submit"],
+    .el-button {
+        padding: 6px 12px !important;
+        font-size: 12px !important;
+        border-radius: 4px !important;
+        cursor: pointer !important;
+        outline: none !important;
+        border: 1px solid transparent !important;
+        transition: all 0.2s !important;
+    }
+    button.btn-primary,
+    .el-button--primary,
+    .edit-btn {
+        background-color: #409EFF !important;
+        color: white !important;
+        border-color: #409EFF !important;
+    }
+    button.btn-primary:hover,
+    .el-button--primary:hover,
+    .edit-btn:hover {
+        background-color: #66b1ff !important;
+        border-color: #66b1ff !important;
+    }
+    button.btn-danger,
+    .el-button--danger,
+    .delete-btn {
+        background-color: #f56c6c !important;
+        color: white !important;
+        border-color: #f56c6c !important;
+    }
+    button.btn-danger:hover,
+    .el-button--danger:hover,
+    .delete-btn:hover {
+        background-color: #f78c8c !important;
+        border-color: #f78c8c !important;
+    }
+    button.btn-default,
+    .el-button--default {
+        background-color: white !important;
+        color: #606266 !important;
+        border-color: #dcdfe6 !important;
+    }
+    button.btn-default:hover,
+    .el-button--default:hover {
+        color: #409EFF !important;
+        border-color: #c6e2ff !important;
+        background-color: #ecf5ff !important;
+    }
+
+    /* ========== 输入框 ========== */
+    input,
+    textarea,
+    select,
+    .el-input__inner,
+    .el-textarea__inner {
+        padding: 8px 12px !important;
+        font-size: 12px !important;
+        border: 1px solid #dcdfe6 !important;
+        border-radius: 4px !important;
+        outline: none !important;
+        background: white !important;
+        color: #333 !important;
+    }
+    input:focus,
+    textarea:focus,
+    select:focus,
+    .el-input__inner:focus,
+    .el-textarea__inner:focus {
+        border-color: #409EFF !important;
+        box-shadow: 0 0 0 2px rgba(64,158,255,0.1) !important;
+    }
+
+    /* ========== 分页器 ========== */
+    .pagination,
+    .el-pagination {
+        margin-top: 20px !important;
+        text-align: center !important;
+    }
+    .pagination a,
+    .pagination span,
+    .el-pager li {
+        display: inline-block !important;
+        padding: 4px 8px !important;
+        margin: 0 2px !important;
+        border-radius: 4px !important;
+        color: #606266 !important;
+        text-decoration: none !important;
+        border: 1px solid #dcdfe6 !important;
+    }
+    .pagination a:hover,
+    .el-pager li:hover {
+        color: #409EFF !important;
+        border-color: #c6e2ff !important;
+        background: #ecf5ff !important;
+    }
+    .pagination .active,
+    .el-pager li.active {
+        background-color: #409EFF !important;
+        color: white !important;
+        border-color: #409EFF !important;
+    }
+
+    /* ========== 标题 ========== */
+    h1, h2, h3, h4, h5, h6 {
+        color: #303133 !important;
+        font-weight: 600 !important;
+        margin: 16px 0 12px !important;
+    }
+    h3 {
+        font-size: 16px !important;
+    }
+
+    /* ========== 通用间距 ========== */
+    .form-group,
+    .el-form-item {
+        margin-bottom: 20px !important;
+    }
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* ================== 左侧菜单栏 ================== */
+.el-aside {
+    background-color: #ffffff !important;
+    border-right: 1px solid #ebeef5 !important;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05) !important;
+}
+.el-menu {
+    border: none !important;
+    background-color: transparent !important;
+}
+.el-menu-item,
+.el-submenu__title {
+    padding: 12px 20px !important;
+    font-size: 14px;
+    color: #606266 !important;
+    transition: all 0.2s ease-in-out !important;
+    border-radius: 4px !important;
+}
+.el-menu-item:hover,
+.el-submenu__title:hover {
+    background-color: #f0f9ff !important;
+    color: #409eff !important;
+}
+.el-menu-item.is-active,
+.el-submenu__title.is-active {
+    background-color: #409eff !important;
+    color: white !important;
+}
+.el-menu-item i {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+/* ================== 主内容区域 ================== */
+.el-main {
+    background-color: #ffffff !important;
+    padding: 24px !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.05) !important;
+    margin: 20px;
+}
+
+/* ================== 表格区域 ================== */
+.el-table th {
+    background-color: #f5f7fa !important;
+    color: #5a5e66 !important;
+    font-weight: 600 !important;
+    font-size: 14px;
+    padding: 12px 16px !important;
+    border-bottom: 1px solid #ebeef5 !important;
+}
+.el-table td {
+    padding: 12px 16px !important;
+    border-bottom: 1px solid #ebeef5 !important;
+}
+.el-table .el-table__row:hover {
+    background-color: #f0f9ff !important;
+}
+.el-table--enable-row-hover .el-table__body tr:hover > td {
+    background-color: #f0f9ff !important;
+}
+
+/* ================== 操作按钮 ================== */
+.el-button--primary {
+    background-color: #409eff !important;
+    border-color: #409eff !important;
+    color: white !important;
+    padding: 6px 12px !important;
+    font-size: 12px;
+    border-radius: 4px;
+}
+.el-button--primary:hover {
+    background-color: #66b1ff !important;
+    border-color: #66b1ff !important;
+}
+.el-button--danger {
+    background-color: #f56c6c !important;
+    border-color: #f56c6c !important;
+    color: white !important;
+    padding: 6px 12px !important;
+    font-size: 12px;
+    border-radius: 4px;
+}
+.el-button--danger:hover {
+    background-color: #f78c8c !important;
+    border-color: #f78c8c !important;
+}
+
+/* ================== 搜索框 ================== */
+.el-input__inner {
+    border: 1px solid #dcdfe6 !important;
+    border-radius: 4px !important;
+    padding: 8px 12px !important;
+    font-size: 12px;
+}
+.el-input__inner:focus {
+    border-color: #409eff !important;
+    box-shadow: 0 0 0 2px rgba(64, 158, 255, 0.1) !important;
+}
+
+/* ================== 分页器 ================== */
+.el-pagination {
+    padding: 20px 0 !important;
+    text-align: center;
+}
+.el-pagination .el-pager li {
+    margin: 0 4px !important;
+    padding: 4px 8px !important;
+    border-radius: 4px;
+}
+.el-pagination .el-pager li.active {
+    background-color: #409eff !important;
+    color: white !important;
+}
+.el-pagination .el-pager li:hover {
+    color: #409eff !important;
+    background-color: #ecf5ff !important;
+}
+.el-pagination .el-pagination__jump {
+    font-size: 12px;
+}
+
+/* ================== 标题与标签 ================== */
+h3 {
+    color: #303133 !important;
+    font-weight: 600 !important;
+    margin-top: 0 !important;
+    margin-bottom: 16px !important;
+    font-size: 16px;
+}
+
+/* ================== 卡片/区块标题 ================== */
+.el-card {
+    border: 1px solid #ebeef5 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+    background-color: white !important;
+}
+.el-card__header {
+    background-color: #f5f7fa !important;
+    border-bottom: 1px solid #ebeef5 !important;
+    padding: 16px 20px !important;
+    font-weight: 600;
+    color: #303133;
+    font-size: 16px;
+}
+.el-card__body {
+    padding: 20px !important;
+}
+
+/* ================== 通用排版优化 ================== */
+.el-form-item__label {
+    font-weight: 500;
+    color: #5a5e66;
+    font-size: 14px;
+}
+.el-form-item {
+    margin-bottom: 20px;
+}

@@ -1,0 +1,34 @@
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Logs
+log/
+*.log
+*.log.*.gz
+
+# Build
+target/
+*.class
+*.jar
+*.war
+
+# Maven
+.mvn/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dependencies
+node_modules/
+
+# Personal / Sensitive
+application-local.yml
+*.private.*
+wxshopback/xshopping/src/main/resources/application.yml
+wxshopback/xshopping/src/main/resources/application.yml.bak
+
+# WeChat Mini Program
+wxshopfront/miniprogram_npm/

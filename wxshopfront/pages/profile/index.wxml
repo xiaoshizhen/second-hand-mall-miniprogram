@@ -1,0 +1,47 @@
+<view class="profile_page">
+  <view class="card profile_card">
+    <view class="profile_title">个人资料</view>
+
+    <view class="form_item">
+      <view class="label">姓名</view>
+      <input class="input" placeholder="请输入姓名" value="{{form.name}}" data-field="name" bindinput="onInput" />
+    </view>
+
+    <view class="form_item">
+      <view class="label">昵称</view>
+      <input class="input" placeholder="请输入昵称" value="{{form.nickname}}" data-field="nickname" bindinput="onInput" />
+    </view>
+
+    <view class="form_item">
+      <view class="label">性别</view>
+      <radio-group class="sex_group" bindchange="onSexChange">
+        <label class="sex_option">
+          <radio value="男" checked="{{form.sex === '男'}}" />男
+        </label>
+        <label class="sex_option">
+          <radio value="女" checked="{{form.sex === '女'}}" />女
+        </label>
+      </radio-group>
+    </view>
+
+    <view class="form_item">
+      <view class="label">年龄</view>
+      <input class="input" type="number" placeholder="请输入年龄" value="{{form.age}}" data-field="age" bindinput="onInput" />
+    </view>
+
+    <view class="form_item">
+      <view class="label">手机号</view>
+      <input class="input" type="number" placeholder="请输入手机号" value="{{form.phone}}" data-field="phone" bindinput="onInput" />
+    </view>
+
+    <view class="form_item">
+      <view class="label">地址</view>
+      <input class="input" placeholder="请输入地址" value="{{form.address}}" data-field="address" bindinput="onInput" />
+    </view>
+  </view>
+
+  <view class="btn_area">
+    <button class="btn-primary" bindtap="onSave">保存</button>
+  </view>
+</view>
+
