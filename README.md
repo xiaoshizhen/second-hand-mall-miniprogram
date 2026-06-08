@@ -7,7 +7,6 @@
 - **前端**：微信小程序原生开发（WXML + WXSS + JavaScript）
 - **后端**：Spring Boot + MyBatis + MySQL RESTful API 服务
 
-> 本项目为本科毕业设计作品。
 
 ---
 
