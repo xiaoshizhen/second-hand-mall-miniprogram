@@ -7,7 +7,6 @@
 - **前端**：微信小程序原生开发（WXML + WXSS + JavaScript）
 - **后端**：Spring Boot + MyBatis + MySQL RESTful API 服务
 
-
 ---
 
 ## 功能模块
@@ -227,4 +226,4 @@ mvn spring-boot:run
 
 ## License
 
-本项目仅用于学习与毕业设计用途。
+本项目基于 MIT License 开源，可自由使用、修改和分发。
